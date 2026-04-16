@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'unit_converter_screen.dart';
 import 'notes_screen.dart';
 import 'password_generator_screen.dart';
+import 'tasks_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,6 +51,13 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.deepPurpleAccent,
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const PasswordGeneratorScreen())),
                   ),
+                  _buildToolCard(
+                    context,
+                    title: 'Task\nManager',
+                    icon: Icons.checklist_rounded,
+                    color: Colors.teal,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const TasksScreen())),
+                  ),
                 ],
               ),
             ),
@@ -87,7 +95,7 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: Theme.of(context).colorScheme.onBackground,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
           ],
